@@ -1,46 +1,98 @@
-# Getting Started with Create React App
+# The Williams Collection - Payment Recovery Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Professional cross-sell website for The Williams Collection Inc., focused on payment recovery solutions for eCommerce businesses.
 
-## Available Scripts
+## Company Information
 
-In the project directory, you can run:
+- **Company Name**: The Williams Collection Inc.
+- **Address**: E 2ND ST 5830 Casper WY US 82609
+- **Founded**: March 2023
+- **Owner**: Shannon Williams
+- **Phone**: +1 517-258-3818
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
+- ✅ Professional CartRescue-style landing page
+- ✅ No "Serenity" branding anywhere
+- ✅ Company details loaded from environment variables
+- ✅ Fully responsive design
+- ✅ No-indexed for search engines (robots.txt + meta tags)
+- ✅ Styled-components for modern UI
+
+## Setup Instructions
+
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Environment Variables
+
+The `.env` file is already configured with:
+- Company name
+- Address
+- Phone number
+- Email support
+- Owner information
+
+### 3. Run Development Server
+
+```bash
+npm start
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 4. Build for Production
 
-### `npm test`
+```bash
+npm run build
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Search Engine Visibility
 
-### `npm run build`
+This site is configured to be **no-indexed** using:
+- `robots.txt` with `Disallow: /`
+- Meta tag: `<meta name="robots" content="noindex, nofollow">`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+williams_cs_1/
+├── public/
+│   ├── index.html          # No-index meta tag included
+│   ├── robots.txt          # Disallow all crawlers
+│   └── manifest.json       # App metadata
+├── src/
+│   ├── components/
+│   │   ├── Header.tsx      # Navigation header
+│   │   ├── HeroSection.tsx # Main hero section
+│   │   ├── FeaturesSection.tsx # 6 key features
+│   │   ├── StatsSection.tsx # Industry statistics
+│   │   ├── CTASection.tsx  # Call-to-action
+│   │   └── Footer.tsx      # Footer with contact info
+│   ├── App.tsx             # Main app component
+│   └── index.tsx           # Entry point
+├── .env                    # Environment variables (DO NOT COMMIT)
+└── package.json
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used
 
-### `npm run eject`
+- React 19.2.0
+- TypeScript 4.9.5
+- Styled-components 6.1.19
+- React Scripts 5.0.1
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Important Notes
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+⚠️ **CRITICAL**: The word "Serenity" must NEVER appear anywhere in:
+- Domain names
+- Content
+- Meta data
+- Descriptions
+- Emails
+- Backend areas
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+✅ All company details are pulled from the `.env` file and match official documentation.
