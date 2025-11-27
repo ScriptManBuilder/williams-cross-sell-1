@@ -23,6 +23,19 @@ const Footer: React.FC = () => {
   const companyPhone = process.env.REACT_APP_PHONE_DISPLAY || '+1 517-258-3818';
   const supportEmail = process.env.REACT_APP_EMAIL_SUPPORT || 'support@williamscollection.com';
 
+  const handleScrollTo = (id: string) => {
+    // Check if we're on the home page
+    if (window.location.pathname === '/') {
+      const element = document.querySelector(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to home page with hash
+      window.location.href = `/${id}`;
+    }
+  };
+
   return (
     <FooterContainer id="contact">
       <FooterContent>
@@ -46,16 +59,16 @@ const Footer: React.FC = () => {
             <FooterSectionTitle>Quick Links</FooterSectionTitle>
             <LinkList>
               <LinkItem>
-                <FooterLink href="#features">Features</FooterLink>
+                <FooterLink as="button" onClick={() => handleScrollTo('#features')}>Features</FooterLink>
               </LinkItem>
               <LinkItem>
-                <FooterLink href="#stats">Industry Stats</FooterLink>
+                <FooterLink as="button" onClick={() => handleScrollTo('#stats')}>Industry Stats</FooterLink>
               </LinkItem>
               <LinkItem>
-                <FooterLink href="#how-it-works">How It Works</FooterLink>
+                <FooterLink as="button" onClick={() => handleScrollTo('#how-it-works')}>How It Works</FooterLink>
               </LinkItem>
               <LinkItem>
-                <FooterLink href="#faq">FAQ</FooterLink>
+                <FooterLink as="button" onClick={() => handleScrollTo('#faq')}>FAQ</FooterLink>
               </LinkItem>
             </LinkList>
           </FooterSection>
@@ -64,13 +77,34 @@ const Footer: React.FC = () => {
             <FooterSectionTitle>Legal</FooterSectionTitle>
             <LinkList>
               <LinkItem>
+                <FooterLink href="/terms">Terms & Conditions</FooterLink>
+              </LinkItem>
+              <LinkItem>
+                <FooterLink href="/privacy">Privacy Policy</FooterLink>
+              </LinkItem>
+              <LinkItem>
+                <FooterLink href="/refund">Refund Policy</FooterLink>
+              </LinkItem>
+              <LinkItem>
+                <FooterLink href="/digital-products">Digital Products Policy</FooterLink>
+              </LinkItem>
+              <LinkItem>
+                <FooterLink href="/ccpa-notice">CCPA Notice</FooterLink>
+              </LinkItem>
+              <LinkItem>
+                <FooterLink href="/data-processing">Data Processing Agreement</FooterLink>
+              </LinkItem>
+              <LinkItem>
                 <FooterLink href="/data-subject-request">Data Subject Request Form</FooterLink>
               </LinkItem>
               <LinkItem>
                 <FooterLink href="/e-signature">E-Signature Disclosure Agreement</FooterLink>
               </LinkItem>
               <LinkItem>
-                <FooterLink href="/ccpa-notice">CCPA Notice</FooterLink>
+                <FooterLink href="/end-user-terms">End-User Terms of Service</FooterLink>
+              </LinkItem>
+              <LinkItem>
+                <FooterLink href="/merchant-disclosure">Merchant Disclosure</FooterLink>
               </LinkItem>
             </LinkList>
           </FooterSection>

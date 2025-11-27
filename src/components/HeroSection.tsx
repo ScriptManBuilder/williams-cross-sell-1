@@ -6,10 +6,25 @@ import {
   HeroTitle,
   Highlight,
   HeroDescription,
-  CTAButton
+  CTAButtonGroup,
+  CTAButtonPrimary,
+  CTAButtonSecondary
 } from '../styles/HeroSection.styles';
 
 const HeroSection: React.FC = () => {
+  const appSubdomain = process.env.REACT_APP_APP_SUBDOMAIN || 'app.williamsrevenuerecovery.com';
+
+  const handleLaunchApp = () => {
+    window.open(`https://${appSubdomain}`, '_blank');
+  };
+
+  const handleScheduleCall = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <HeroContainer>
       <HeroContent>
@@ -23,7 +38,14 @@ const HeroSection: React.FC = () => {
           Using advanced automation, behavioral analytics, and smart retry logic, we help eCommerce businesses 
           reclaim up to 30% of failed payments while maintaining seamless customer experience.
         </HeroDescription>
-        <CTAButton>Get Started Today →</CTAButton>
+        <CTAButtonGroup>
+          <CTAButtonPrimary onClick={handleLaunchApp}>
+            Launch App →
+          </CTAButtonPrimary>
+          <CTAButtonSecondary onClick={handleScheduleCall}>
+            Schedule a Call
+          </CTAButtonSecondary>
+        </CTAButtonGroup>
       </HeroContent>
     </HeroContainer>
   );

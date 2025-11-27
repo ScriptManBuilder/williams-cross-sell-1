@@ -201,14 +201,28 @@ export const HeroDescription = styled.p`
   }
 `;
 
-export const CTAButton = styled.button`
+export const CTAButtonGroup = styled.div`
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+`;
+
+export const CTAButtonPrimary = styled.button`
   background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
   color: white;
   border: none;
   padding: 1.15rem 3rem;
   font-size: 1.05rem;
   font-weight: 600;
-  border-radius: 50px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 10px 30px rgba(0, 102, 204, 0.3);
@@ -251,7 +265,7 @@ export const CTAButton = styled.button`
     padding: 0.75rem 1.75rem;
     font-size: 0.95rem;
     width: 100%;
-    max-width: 300px;
+    max-width: 350px;
   }
 
   @media (max-width: 375px) {
@@ -261,6 +275,71 @@ export const CTAButton = styled.button`
 
   @media (max-width: 320px) {
     padding: 0.65rem 1.25rem;
+    font-size: 0.85rem;
+  }
+`;
+
+export const CTAButtonSecondary = styled.button`
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 1.05rem 2.85rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.02em;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+
+    &::before {
+      left: 100%;
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.825rem 1.85rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 425px) {
+    padding: 0.7rem 1.6rem;
+    font-size: 0.95rem;
+    width: 100%;
+    max-width: 350px;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0.65rem 1.4rem;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 320px) {
+    padding: 0.6rem 1.2rem;
     font-size: 0.85rem;
   }
 `;

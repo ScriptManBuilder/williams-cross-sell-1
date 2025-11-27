@@ -153,6 +153,12 @@ export const FooterLink = styled.a`
   font-size: 0.9rem;
   display: inline-block;
   position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  text-align: left;
 
   &::after {
     content: '';

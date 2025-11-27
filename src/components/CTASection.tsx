@@ -14,6 +14,13 @@ import {
 } from '../styles/CTASection.styles';
 
 const CTASection: React.FC = () => {
+  const handleGetStarted = () => {
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const features = [
     {
       icon: (
@@ -51,7 +58,7 @@ const CTASection: React.FC = () => {
         <CTADescription>
           Join leading brands that trust our platform to automatically recover failed payments and maximize revenue.
         </CTADescription>
-        <CTASectionButton>Get Started Now →</CTASectionButton>
+        <CTASectionButton onClick={handleGetStarted}>Get Started Now →</CTASectionButton>
         
         <CTAFeaturesGrid>
           {features.map((feature, index) => (

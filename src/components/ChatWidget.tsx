@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   ChatContainer,
   ChatButton,
@@ -10,37 +10,271 @@ import {
   ChatBody,
   ChatForm,
   FormGroup,
-  FormLabel,
   FormInput,
   FormTextarea,
-  SubmitButton,
-  SuccessAlert,
-  AlertIcon,
-  AlertContent,
-  AlertTitle,
-  AlertMessage
+  SubmitButton
 } from '../styles/ChatWidget.styles';
 
+interface Message {
+  text: string;
+  sender: 'user' | 'bot';
+  typing?: boolean;
+}
+
 const ChatWidget: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
+  const [isOpen, setIsOpen] = useState(() => {
+    const saved = localStorage.getItem('chatWidget_isOpen');
+    return saved ? JSON.parse(saved) : false;
+  });
+  
+  const [message, setMessage] = useState('');
+  
+  const [messages, setMessages] = useState<Message[]>(() => {
+    const saved = localStorage.getItem('chatWidget_messages');
+    return saved ? JSON.parse(saved) : [];
+  });
+  
+  const [isTyping, setIsTyping] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
+  
+  const [hasShownWelcome, setHasShownWelcome] = useState(() => {
+    const saved = localStorage.getItem('chatWidget_hasShownWelcome');
+    return saved ? JSON.parse(saved) : false;
+  });
+
+  const [messageCount, setMessageCount] = useState(() => {
+    const saved = localStorage.getItem('chatWidget_messageCount');
+    return saved ? JSON.parse(saved) : 0;
+  });
+
+  const [lockoutTime, setLockoutTime] = useState<number | null>(() => {
+    const saved = localStorage.getItem('chatWidget_lockoutTime');
+    return saved ? JSON.parse(saved) : null;
+  });
+
+  const [isLocked, setIsLocked] = useState(false);
+  
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Preload images
+  useEffect(() => {
+    const images = ['/8943377.png', '/icon_2.png', '/support.png'];
+    images.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
+  // Welcome messages (random selection)
+  const welcomeMessages = [
+    "Hello! Thank you for reaching out. Please leave your message below and our support team will get back to you as soon as possible. We typically respond within 24 hours.",
+    "Hi there! Welcome to our support chat. Feel free to share your question or concern, and our team will assist you shortly.",
+    "Greetings! Thanks for contacting us. Please describe your inquiry and we'll make sure to respond as quickly as possible.",
+    "Hello! We're here to help. Share your message with us and our support team will review it and get back to you soon."
+  ];
+
+  // Response messages (random selection)
+  const responseMessages = [
+    "Thank you for your message! Your inquiry has been received and is now being processed. Our support team will review it and respond to you via email shortly.",
+    "Got it! We've received your message and our team has been notified. You'll hear back from us via email as soon as possible.",
+    "Thanks for reaching out! Your request has been logged and our support specialists will get back to you shortly via email.",
+    "Message received! Our team is now reviewing your inquiry and will respond to your email address within 24 hours."
+  ];
+
+  // Closing messages (random selection)
+  const closingMessages = [
+    "This chat will close automatically. If you have more questions, feel free to reach out anytime!",
+    "We'll be closing this chat now. Don't hesitate to contact us again if you need further assistance!",
+    "Thank you for chatting with us! This window will close shortly. Feel free to return anytime.",
+    "Chat ending now. Remember, we're always here to help if you need us again!"
+  ];
+
+  // Lockout messages
+  const lockoutMessage = "You've reached the maximum number of messages (3) for this session. Please wait 1 hour before sending more messages. Our team will respond to your previous inquiries via email.";
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  // Check if lockout has expired
+  useEffect(() => {
+    if (lockoutTime) {
+      const now = Date.now();
+      const timeLeft = lockoutTime - now;
+      
+      if (timeLeft <= 0) {
+        // Lockout expired
+        setLockoutTime(null);
+        setMessageCount(0);
+        setIsLocked(false);
+        localStorage.removeItem('chatWidget_lockoutTime');
+        localStorage.setItem('chatWidget_messageCount', '0');
+      } else {
+        // Still locked
+        setIsLocked(true);
+        // Set timer to unlock
+        const timer = setTimeout(() => {
+          setLockoutTime(null);
+          setMessageCount(0);
+          setIsLocked(false);
+          localStorage.removeItem('chatWidget_lockoutTime');
+          localStorage.setItem('chatWidget_messageCount', '0');
+        }, timeLeft);
+        
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [lockoutTime]);
+
+  // Save to localStorage when state changes
+  useEffect(() => {
+    localStorage.setItem('chatWidget_isOpen', JSON.stringify(isOpen));
+  }, [isOpen]);
+
+  useEffect(() => {
+    localStorage.setItem('chatWidget_messages', JSON.stringify(messages));
+  }, [messages]);
+
+  useEffect(() => {
+    localStorage.setItem('chatWidget_hasShownWelcome', JSON.stringify(hasShownWelcome));
+  }, [hasShownWelcome]);
+
+  useEffect(() => {
+    localStorage.setItem('chatWidget_messageCount', JSON.stringify(messageCount));
+  }, [messageCount]);
+
+  useEffect(() => {
+    if (lockoutTime) {
+      localStorage.setItem('chatWidget_lockoutTime', JSON.stringify(lockoutTime));
+    }
+  }, [lockoutTime]);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, isTyping]);
+
+  useEffect(() => {
+    if (isOpen && messages.length === 0 && !hasShownWelcome) {
+      // Show typing indicator
+      setIsTyping(true);
+      
+      // After 2.5 seconds, show random welcome message
+      setTimeout(() => {
+        setIsTyping(false);
+        const randomWelcome = welcomeMessages[Math.floor(Math.random() * welcomeMessages.length)];
+        const welcomeMsg = {
+          text: randomWelcome,
+          sender: 'bot' as const
+        };
+        setMessages([welcomeMsg]);
+        setHasShownWelcome(true);
+      }, 2500);
+    }
+  }, [isOpen, messages.length, hasShownWelcome]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Show success message
-    setShowSuccess(true);
-    
-    // Reset form
-    (e.target as HTMLFormElement).reset();
-    
-    // Hide success message and close chat after 3 seconds
-    setTimeout(() => {
-      setShowSuccess(false);
+    if (message.trim() && !isProcessing && !isLocked) {
+      // Check if user has reached message limit
+      if (messageCount >= 3) {
+        // Add lockout message
+        setMessages(prev => [...prev, {
+          text: lockoutMessage,
+          sender: 'bot'
+        }]);
+        
+        // Set lockout for 1 hour (3600000 ms)
+        const lockTime = Date.now() + 3600000;
+        setLockoutTime(lockTime);
+        setIsLocked(true);
+        return;
+      }
+
+      // Increment message count
+      const newCount = messageCount + 1;
+      setMessageCount(newCount);
+
+      // Add user message
+      setMessages(prev => [...prev, { text: message, sender: 'user' }]);
+      
+      // Clear input
+      setMessage('');
+      
+      // Set processing state
+      setIsProcessing(true);
+      
+      // Show typing indicator
       setTimeout(() => {
-        setIsOpen(false);
-      }, 300);
-    }, 3000);
+        setIsTyping(true);
+      }, 1200);
+      
+      // Add bot response after typing delay (random response)
+      setTimeout(() => {
+        setIsTyping(false);
+        const randomResponse = responseMessages[Math.floor(Math.random() * responseMessages.length)];
+        setMessages(prev => [...prev, {
+          text: randomResponse,
+          sender: 'bot'
+        }]);
+      }, 4000);
+
+      // If this was the 3rd message, warn about limit
+      if (newCount === 3) {
+        setTimeout(() => {
+          setIsTyping(true);
+        }, 5000);
+
+        setTimeout(() => {
+          setIsTyping(false);
+          setMessages(prev => [...prev, {
+            text: "Note: This is your last message for this session. After this, you'll need to wait 1 hour before sending more messages.",
+            sender: 'bot'
+          }]);
+        }, 7000);
+
+        // Show closing message
+        setTimeout(() => {
+          setIsTyping(true);
+        }, 8000);
+
+        setTimeout(() => {
+          setIsTyping(false);
+          const randomClosing = closingMessages[Math.floor(Math.random() * closingMessages.length)];
+          setMessages(prev => [...prev, {
+            text: randomClosing,
+            sender: 'bot'
+          }]);
+        }, 10000);
+
+        // Close chat after 12 seconds
+        setTimeout(() => {
+          setIsOpen(false);
+          setIsProcessing(false);
+        }, 12000);
+      } else {
+        // Normal flow for messages 1 and 2
+        // Show closing message
+        setTimeout(() => {
+          setIsTyping(true);
+        }, 5000);
+
+        setTimeout(() => {
+          setIsTyping(false);
+          const randomClosing = closingMessages[Math.floor(Math.random() * closingMessages.length)];
+          setMessages(prev => [...prev, {
+            text: randomClosing,
+            sender: 'bot'
+          }]);
+        }, 7000);
+
+        // Close chat after 9 seconds
+        setTimeout(() => {
+          setIsOpen(false);
+          setIsProcessing(false);
+        }, 9000);
+      }
+    }
   };
 
   return (
@@ -56,9 +290,24 @@ const ChatWidget: React.FC = () => {
       {isOpen && (
         <ChatWindow>
           <ChatHeader>
-            <div>
-              <ChatTitle>Chat with us</ChatTitle>
-              <ChatSubtitle>We typically reply within minutes</ChatSubtitle>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              <img 
+                src="/8943377.png" 
+                alt="Support" 
+                style={{ 
+                  width: '40px', 
+                  height: '40px', 
+                  borderRadius: '50%',
+                  objectFit: 'cover',
+                  border: '2px solid rgba(255, 255, 255, 0.3)'
+                }} 
+              />
+              <div>
+                <ChatTitle>Support Team</ChatTitle>
+                <ChatSubtitle>
+                  {isTyping ? 'Typing...' : 'We\'re here to help'}
+                </ChatSubtitle>
+              </div>
             </div>
             <CloseButton onClick={() => setIsOpen(false)}>
               <svg viewBox="0 0 24 24" fill="currentColor">
@@ -68,63 +317,182 @@ const ChatWidget: React.FC = () => {
           </ChatHeader>
 
           <ChatBody>
-            {showSuccess && (
-              <SuccessAlert>
-                <AlertIcon>
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                  </svg>
-                </AlertIcon>
-                <AlertContent>
-                  <AlertTitle>Message Sent!</AlertTitle>
-                  <AlertMessage>Thank you for contacting us. We'll get back to you shortly.</AlertMessage>
-                </AlertContent>
-              </SuccessAlert>
+            <div style={{ 
+              display: 'flex', 
+              flexDirection: 'column', 
+              gap: '1rem',
+              marginBottom: '1rem',
+              maxHeight: '350px',
+              overflowY: 'auto',
+              padding: '0.5rem'
+            }}>
+              {messages.map((msg, index) => (
+                <div
+                  key={index}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '0.5rem',
+                    flexDirection: msg.sender === 'user' ? 'row-reverse' : 'row'
+                  }}
+                >
+                  {msg.sender === 'bot' && (
+                    <img 
+                      src="/icon_2.png" 
+                      alt="Support" 
+                      style={{ 
+                        width: '32px', 
+                        height: '32px', 
+                        borderRadius: '50%',
+                        objectFit: 'cover',
+                        flexShrink: 0,
+                        marginTop: '0.25rem'
+                      }} 
+                    />
+                  )}
+                  <div
+                    style={{
+                      maxWidth: '75%',
+                      padding: '0.75rem 1rem',
+                      borderRadius: msg.sender === 'user' ? '16px 16px 4px 16px' : '16px 16px 16px 4px',
+                      backgroundColor: msg.sender === 'user' ? '#0066cc' : '#f0f2f5',
+                      color: msg.sender === 'user' ? '#ffffff' : '#2c3e50',
+                      fontSize: '0.9rem',
+                      lineHeight: '1.5',
+                      wordWrap: 'break-word',
+                      boxShadow: msg.sender === 'user' 
+                        ? '0 2px 8px rgba(0, 102, 204, 0.2)' 
+                        : '0 2px 8px rgba(0, 0, 0, 0.05)'
+                    }}
+                  >
+                    {msg.text}
+                  </div>
+                </div>
+              ))}
+              
+              {isTyping && (
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '0.5rem'
+                  }}
+                >
+                  <img 
+                    src="/support.png" 
+                    alt="Support" 
+                    style={{ 
+                      width: '32px', 
+                      height: '32px', 
+                      borderRadius: '50%',
+                      objectFit: 'cover',
+                      flexShrink: 0,
+                      marginTop: '0.25rem'
+                    }} 
+                  />
+                  <div
+                    style={{
+                      padding: '0.75rem 1rem',
+                      borderRadius: '16px 16px 16px 4px',
+                      backgroundColor: '#f0f2f5',
+                      display: 'flex',
+                      gap: '0.4rem',
+                      alignItems: 'center'
+                    }}
+                  >
+                    <div style={{
+                      width: '8px',
+                      height: '8px',
+                      borderRadius: '50%',
+                      backgroundColor: '#5a6c7d',
+                      animation: 'typing 1.4s infinite',
+                      animationDelay: '0s'
+                    }} />
+                    <div style={{
+                      width: '8px',
+                      height: '8px',
+                      borderRadius: '50%',
+                      backgroundColor: '#5a6c7d',
+                      animation: 'typing 1.4s infinite',
+                      animationDelay: '0.2s'
+                    }} />
+                    <div style={{
+                      width: '8px',
+                      height: '8px',
+                      borderRadius: '50%',
+                      backgroundColor: '#5a6c7d',
+                      animation: 'typing 1.4s infinite',
+                      animationDelay: '0.4s'
+                    }} />
+                  </div>
+                </div>
+              )}
+              
+              <div ref={messagesEndRef} />
+            </div>
+            
+            {!isProcessing && !isLocked && (
+              <ChatForm onSubmit={handleSubmit}>
+                <FormGroup style={{ marginBottom: '0' }}>
+                  <FormInput
+                    as={FormTextarea}
+                    value={message}
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)}
+                    placeholder="Type your message here..."
+                    rows={3}
+                    style={{ resize: 'none' }}
+                    disabled={isProcessing || isLocked}
+                  />
+                </FormGroup>
+
+                <SubmitButton type="submit" disabled={!message.trim() || isProcessing || isLocked}>
+                  Send Message
+                </SubmitButton>
+              </ChatForm>
             )}
             
-            {!showSuccess && (
-              <ChatForm onSubmit={handleSubmit}>
-              <FormGroup>
-                <FormLabel>
-                  Name <span style={{ color: '#d32f2f' }}>*</span>
-                </FormLabel>
-                <FormInput type="text" placeholder="Your name" required />
-              </FormGroup>
+            {isProcessing && !isLocked && (
+              <div style={{
+                padding: '1rem',
+                textAlign: 'center',
+                color: '#5a6c7d',
+                fontSize: '0.9rem',
+                fontStyle: 'italic'
+              }}>
+                Processing your message...
+              </div>
+            )}
 
-              <FormGroup>
-                <FormLabel>
-                  Email <span style={{ color: '#d32f2f' }}>*</span>
-                </FormLabel>
-                <FormInput type="email" placeholder="your.email@example.com" required />
-              </FormGroup>
-
-              <FormGroup>
-                <FormLabel>Company</FormLabel>
-                <FormInput type="text" placeholder="Your company name" />
-              </FormGroup>
-
-              <FormGroup>
-                <FormLabel>Phone</FormLabel>
-                <FormInput type="tel" placeholder="+1 (555) 123-4567" />
-              </FormGroup>
-
-              <FormGroup>
-                <FormLabel>
-                  Message <span style={{ color: '#d32f2f' }}>*</span>
-                </FormLabel>
-                <FormTextarea 
-                  placeholder="How can we help you?" 
-                  rows={4}
-                  required 
-                />
-              </FormGroup>
-
-              <SubmitButton type="submit">Send Message</SubmitButton>
-            </ChatForm>
+            {isLocked && lockoutTime && (
+              <div style={{
+                padding: '1rem',
+                textAlign: 'center',
+                color: '#d32f2f',
+                fontSize: '0.9rem',
+                fontWeight: 600,
+                backgroundColor: '#ffebee',
+                borderRadius: '8px',
+                margin: '0.5rem'
+              }}>
+                Message limit reached. Please wait until {new Date(lockoutTime).toLocaleTimeString()} to send more messages.
+              </div>
             )}
           </ChatBody>
         </ChatWindow>
       )}
+      
+      <style>{`
+        @keyframes typing {
+          0%, 60%, 100% {
+            transform: translateY(0);
+            opacity: 0.7;
+          }
+          30% {
+            transform: translateY(-10px);
+            opacity: 1;
+          }
+        }
+      `}</style>
     </ChatContainer>
   );
 };

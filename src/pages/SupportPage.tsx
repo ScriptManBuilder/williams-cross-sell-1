@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   SupportContainer,
   SupportHero,
   HeroContent,
   HeroTitle,
   HeroDescription,
+  HeroImageWrapper,
+  HeroImage,
   ContactInfo,
   PhoneNumber,
   PhoneIcon,
@@ -17,12 +19,53 @@ import {
   HelpCard,
   HelpIcon,
   HelpCardTitle,
-  HelpCardDescription
+  HelpCardDescription,
+  FAQSection,
+  FAQSectionTitle,
+  FAQSectionDescription,
+  FAQList,
+  FAQItem,
+  FAQQuestion,
+  FAQAnswer,
+  FAQIcon
 } from '../styles/SupportPage.styles';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const SupportPage: React.FC = () => {
+  const [openFAQIndex, setOpenFAQIndex] = useState<number | null>(null);
+
+  const faqs = [
+    {
+      question: 'How quickly will I receive a response?',
+      answer: 'Our support team typically responds within 2-4 hours during business hours (Monday-Friday, 9 AM - 6 PM EST). For urgent issues, please call our phone support line for immediate assistance.'
+    },
+    {
+      question: 'What information should I include when contacting support?',
+      answer: 'Please include your account email, a detailed description of the issue, any error messages you received, and screenshots if applicable. This helps us resolve your issue faster.'
+    },
+    {
+      question: 'Do you offer technical support for integrations?',
+      answer: 'Yes! Our technical support team can assist with API integrations, webhooks, and platform connections. We provide comprehensive documentation and dedicated support for technical implementation.'
+    },
+    {
+      question: 'Can I schedule a call with your support team?',
+      answer: 'Absolutely! You can schedule a call through our contact form or by emailing us directly. We offer screen-sharing sessions for complex technical issues and onboarding assistance.'
+    },
+    {
+      question: 'What if I need help outside business hours?',
+      answer: 'You can submit a ticket anytime through email or our contact form. We monitor support requests 24/7 and will respond as soon as possible. Critical issues are prioritized and handled immediately.'
+    },
+    {
+      question: 'Do you provide training for new users?',
+      answer: 'Yes! We offer comprehensive onboarding sessions, video tutorials, and detailed documentation. Our support team can schedule personalized training sessions to help you get the most out of our platform.'
+    }
+  ];
+
+  const toggleFAQ = (index: number) => {
+    setOpenFAQIndex(openFAQIndex === index ? null : index);
+  };
+
   const helpTopics = [
     {
       icon: (
@@ -93,9 +136,13 @@ const SupportPage: React.FC = () => {
       <Header />
       <SupportContainer>
         <SupportHero>
-          <HeroContent>
-            <HeroTitle>Customer Care for Payment Recovery</HeroTitle>
-            <HeroDescription>Need help? We're here to support you.</HeroDescription>
+          <div>
+            <HeroImageWrapper>
+              <HeroImage src="/heroSupport3.png" alt="Customer Support" />
+            </HeroImageWrapper>
+            <HeroContent>
+              <HeroTitle>Customer Care for Payment Recovery</HeroTitle>
+              <HeroDescription>Need help? We're here to support you.</HeroDescription>
             
             <ContactInfo>
               <PhoneIcon>
@@ -122,15 +169,22 @@ const SupportPage: React.FC = () => {
                 </svg>
                 Contact Form
               </ActionButton>
+              <ActionButton onClick={handleContactClick}>
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/>
+                </svg>
+                Request Refund
+              </ActionButton>
             </ActionButtons>
           </HeroContent>
+          </div>
         </SupportHero>
         
         <HelpSection>
           <HelpTitle>How Can We Help You Today?</HelpTitle>
           <HelpGrid>
             {helpTopics.map((topic, index) => (
-              <HelpCard key={index}>
+              <HelpCard key={index} onClick={handleContactClick} style={{ cursor: 'pointer' }}>
                 <HelpIcon>{topic.icon}</HelpIcon>
                 <HelpCardTitle>{topic.title}</HelpCardTitle>
                 <HelpCardDescription>{topic.description}</HelpCardDescription>
@@ -138,6 +192,42 @@ const SupportPage: React.FC = () => {
             ))}
           </HelpGrid>
         </HelpSection>
+
+        <FAQSection>
+          <FAQSectionTitle>Frequently Asked Questions</FAQSectionTitle>
+          <FAQSectionDescription>Quick answers to common support questions</FAQSectionDescription>
+          <FAQList>
+            {faqs.map((faq, index) => (
+              <FAQItem key={index}>
+                <FAQQuestion onClick={() => toggleFAQ(index)} $isOpen={openFAQIndex === index}>
+                  <span>{faq.question}</span>
+                  <FAQIcon $isOpen={openFAQIndex === index}>
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M7 10l5 5 5-5z"/>
+                    </svg>
+                  </FAQIcon>
+                </FAQQuestion>
+                {openFAQIndex === index && (
+                  <FAQAnswer>
+                    {faq.answer}
+                    <div style={{ marginTop: '1rem' }}>
+                      <ActionButton 
+                        onClick={handleContactClick} 
+                        style={{ 
+                          fontSize: '0.9rem', 
+                          padding: '0.6rem 1.25rem',
+                          display: 'inline-flex'
+                        }}
+                      >
+                        Contact Support
+                      </ActionButton>
+                    </div>
+                  </FAQAnswer>
+                )}
+              </FAQItem>
+            ))}
+          </FAQList>
+        </FAQSection>
       </SupportContainer>
       <Footer />
     </>
