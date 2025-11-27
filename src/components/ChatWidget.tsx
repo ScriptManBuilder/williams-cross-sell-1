@@ -56,15 +56,6 @@ const ChatWidget: React.FC = () => {
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Preload images
-  useEffect(() => {
-    const images = ['/8943377.png', '/icon_2.png', '/support.png'];
-    images.forEach(src => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, []);
-
   // Welcome messages (random selection)
   const welcomeMessages = [
     "Hello! Thank you for reaching out. Please leave your message below and our support team will get back to you as soon as possible. We typically respond within 24 hours.",
@@ -291,17 +282,20 @@ const ChatWidget: React.FC = () => {
         <ChatWindow>
           <ChatHeader>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              <img 
-                src="/8943377.png" 
-                alt="Support" 
-                style={{ 
-                  width: '40px', 
-                  height: '40px', 
-                  borderRadius: '50%',
-                  objectFit: 'cover',
-                  border: '2px solid rgba(255, 255, 255, 0.3)'
-                }} 
-              />
+              <div style={{ 
+                width: '40px', 
+                height: '40px', 
+                borderRadius: '50%',
+                background: 'rgba(255, 255, 255, 0.2)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: '2px solid rgba(255, 255, 255, 0.3)'
+              }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+              </div>
               <div>
                 <ChatTitle>Support Team</ChatTitle>
                 <ChatSubtitle>
@@ -337,18 +331,40 @@ const ChatWidget: React.FC = () => {
                   }}
                 >
                   {msg.sender === 'bot' && (
-                    <img 
-                      src="/icon_2.png" 
-                      alt="Support" 
-                      style={{ 
-                        width: '32px', 
-                        height: '32px', 
-                        borderRadius: '50%',
-                        objectFit: 'cover',
-                        flexShrink: 0,
-                        marginTop: '0.25rem'
-                      }} 
-                    />
+                    <div style={{ 
+                      width: '32px', 
+                      height: '32px', 
+                      borderRadius: '50%',
+                      background: 'linear-gradient(135deg, #0066cc 0%, #0052a3 100%)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                      marginTop: '0.25rem',
+                      boxShadow: '0 2px 8px rgba(0, 102, 204, 0.3)'
+                    }}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                      </svg>
+                    </div>
+                  )}
+                  {msg.sender === 'user' && (
+                    <div style={{ 
+                      width: '32px', 
+                      height: '32px', 
+                      borderRadius: '50%',
+                      background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                      marginTop: '0.25rem',
+                      boxShadow: '0 2px 8px rgba(16, 185, 129, 0.3)'
+                    }}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                      </svg>
+                    </div>
                   )}
                   <div
                     style={{
@@ -378,18 +394,22 @@ const ChatWidget: React.FC = () => {
                     gap: '0.5rem'
                   }}
                 >
-                  <img 
-                    src="/support.png" 
-                    alt="Support" 
-                    style={{ 
-                      width: '32px', 
-                      height: '32px', 
-                      borderRadius: '50%',
-                      objectFit: 'cover',
-                      flexShrink: 0,
-                      marginTop: '0.25rem'
-                    }} 
-                  />
+                  <div style={{ 
+                    width: '32px', 
+                    height: '32px', 
+                    borderRadius: '50%',
+                    background: 'linear-gradient(135deg, #0066cc 0%, #0052a3 100%)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    marginTop: '0.25rem',
+                    boxShadow: '0 2px 8px rgba(0, 102, 204, 0.3)'
+                  }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                  </div>
                   <div
                     style={{
                       padding: '0.75rem 1rem',
