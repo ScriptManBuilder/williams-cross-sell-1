@@ -15,7 +15,8 @@ const HeroSection: React.FC = () => {
   const appSubdomain = process.env.REACT_APP_APP_SUBDOMAIN || 'app.williamsrevenuerecovery.com';
 
   const handleLaunchApp = () => {
-    window.open(`https://${appSubdomain}`, '_blank');
+    // Temporarily disabled - demo site under construction
+    // window.open(`https://${appSubdomain}`, '_blank');
   };
 
   const handleScheduleCall = () => {
