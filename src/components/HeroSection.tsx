@@ -29,22 +29,22 @@ const HeroSection: React.FC = () => {
   return (
     <HeroContainer>
       <HeroContent>
-        <Tagline>Trusted by Leading Brands</Tagline>
+        <Tagline>Exclusive Member Benefits</Tagline>
         <HeroTitle>
-          Recover Failed Payments.
-          <Highlight>Rescue Lost Revenue.</Highlight>
+          Unlock Premium Perks.
+          <Highlight>Save More Every Day.</Highlight>
         </HeroTitle>
         <HeroDescription>
-          Transform declined transactions into recovered revenue with our intelligent payment recovery platform. 
-          Using advanced automation, behavioral analytics, and smart retry logic, we help eCommerce businesses 
-          reclaim up to 30% of failed payments while maintaining seamless customer experience.
+          Join thousands of savvy shoppers enjoying exclusive discounts, cashback rewards, and VIP perks. 
+          Our members save an average of $1,200 annually on everyday purchases while accessing premium 
+          benefits across thousands of partner brands and retailers.
         </HeroDescription>
         <CTAButtonGroup>
           <CTAButtonPrimary onClick={handleLaunchApp}>
-            Launch App →
+            View My Perks →
           </CTAButtonPrimary>
           <CTAButtonSecondary onClick={handleScheduleCall}>
-            Schedule a Call
+            Learn More
           </CTAButtonSecondary>
         </CTAButtonGroup>
       </HeroContent>

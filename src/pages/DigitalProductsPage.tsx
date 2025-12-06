@@ -31,8 +31,8 @@ const DigitalProductsPage: React.FC = () => {
               terms outlined in this policy.
             </LegalParagraph>
             <LegalParagraph>
-              Our digital products include software-as-a-service (SaaS) subscriptions, payment recovery tools, analytics 
-              dashboards, API access, and any other digital services or downloadable content we provide.
+              Our digital products include loyalty program memberships, exclusive discount access, mobile apps for tracking rewards, 
+              and any other digital services or content we provide.
             </LegalParagraph>
           </LegalSection>
 
@@ -43,22 +43,22 @@ const DigitalProductsPage: React.FC = () => {
             </LegalParagraph>
             <LegalList>
               <LegalListItem>
-                <strong>Software-as-a-Service (SaaS):</strong> Cloud-based payment recovery platform accessible via web browser
+                <strong>Membership Access:</strong> Digital loyalty program membership with access to exclusive discounts and rewards
               </LegalListItem>
               <LegalListItem>
-                <strong>API Access:</strong> RESTful API for integration with your e-commerce platform or systems
+                <strong>Member Dashboard:</strong> Web-based portal for tracking savings, cashback rewards, and available perks
               </LegalListItem>
               <LegalListItem>
-                <strong>Analytics & Reports:</strong> Data visualization tools, custom reports, and business intelligence features
+                <strong>Rewards Tracking:</strong> Tools for monitoring your cashback earnings, savings history, and redemption options
               </LegalListItem>
               <LegalListItem>
-                <strong>Mobile Applications:</strong> iOS and Android apps for monitoring payment recovery performance
+                <strong>Mobile Applications:</strong> iOS and Android apps for accessing member benefits and finding nearby deals
               </LegalListItem>
               <LegalListItem>
-                <strong>Plugins & Integrations:</strong> Pre-built connectors for popular e-commerce platforms
+                <strong>Partner Integrations:</strong> Access to exclusive offers from thousands of partner retailers and brands
               </LegalListItem>
               <LegalListItem>
-                <strong>Documentation & Resources:</strong> Technical guides, API documentation, best practices, and training materials
+                <strong>Documentation & Resources:</strong> Member guides, benefit overviews, FAQs, and support materials
               </LegalListItem>
             </LegalList>
           </LegalSection>

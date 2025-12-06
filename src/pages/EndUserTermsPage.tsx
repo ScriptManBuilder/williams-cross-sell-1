@@ -27,11 +27,11 @@ const EndUserTermsPage: React.FC = () => {
             <LegalSectionTitle>1. Acceptance of Terms</LegalSectionTitle>
             <LegalParagraph>
               These End-User Terms of Service ("End-User Terms") govern your use of services provided by 
-              {process.env.REACT_APP_COMPANY_NAME} when you interact with our payment recovery platform as an end-user 
-              or customer of our merchant clients.
+              {process.env.REACT_APP_COMPANY_NAME} when you interact with our loyalty rewards program as a member 
+              or prospective member.
             </LegalParagraph>
             <LegalParagraph>
-              By completing a transaction, making a payment, or interacting with our payment recovery communications, 
+              By enrolling as a member, accessing exclusive discounts, or interacting with our communications, 
               you acknowledge that you have read, understood, and agree to be bound by these End-User Terms.
             </LegalParagraph>
             <LegalParagraph>
@@ -42,30 +42,28 @@ const EndUserTermsPage: React.FC = () => {
           <LegalSection>
             <LegalSectionTitle>2. Service Description</LegalSectionTitle>
             <LegalParagraph>
-              {process.env.REACT_APP_COMPANY_NAME} provides payment recovery services on behalf of merchant clients. 
+              {process.env.REACT_APP_COMPANY_NAME} provides a loyalty rewards program offering exclusive member benefits. 
               Our services include:
             </LegalParagraph>
             <LegalList>
               <LegalListItem>
-                <strong>Payment Retry Services:</strong> Automated retry of declined payment transactions using updated 
-                payment information
+                <strong>Exclusive Discounts:</strong> Access to special pricing and deals at thousands of partner retailers
               </LegalListItem>
               <LegalListItem>
-                <strong>Payment Reminders:</strong> Email and SMS notifications reminding you of pending or failed payments
+                <strong>Cashback Rewards:</strong> Earn percentage-based cashback on purchases from participating brands
               </LegalListItem>
               <LegalListItem>
-                <strong>Account Recovery Links:</strong> Secure links allowing you to update payment information or complete purchases
+                <strong>VIP Benefits:</strong> Priority customer service, early access to sales, and exclusive member events
               </LegalListItem>
               <LegalListItem>
-                <strong>Customer Support:</strong> Assistance with payment issues, account questions, and transaction inquiries
+                <strong>Member Support:</strong> Assistance with account questions, benefit inquiries, and reward redemptions
               </LegalListItem>
               <LegalListItem>
-                <strong>Secure Payment Processing:</strong> PCI-compliant payment processing infrastructure
+                <strong>Rewards Dashboard:</strong> Secure online portal for tracking savings and managing your membership
               </LegalListItem>
             </LegalList>
             <LegalParagraph style={{ marginTop: '1rem' }}>
-              We act as a service provider to merchants and process payments on their behalf. The underlying transaction 
-              is between you and the merchant.
+              We partner with retailers and brands to provide you with exclusive member benefits and savings opportunities.
             </LegalParagraph>
           </LegalSection>
 
@@ -87,30 +85,25 @@ const EndUserTermsPage: React.FC = () => {
           </LegalSection>
 
           <LegalSection>
-            <LegalSectionTitle>4. Payment Authorization</LegalSectionTitle>
+            <LegalSectionTitle>4. Membership Enrollment and Fees</LegalSectionTitle>
             <LegalParagraph>
-              When you provide payment information through our platform:
+              When you enroll in our loyalty program:
             </LegalParagraph>
             <LegalList>
               <LegalListItem>
-                <strong>Authorization:</strong> You authorize us to process payment on behalf of the merchant for the amount 
-                specified in the transaction
+                <strong>Authorization:</strong> You authorize us to process membership fees according to your selected plan
               </LegalListItem>
               <LegalListItem>
-                <strong>Accuracy:</strong> You warrant that all payment information provided (card number, expiration date, 
-                billing address, etc.) is accurate and up-to-date
+                <strong>Accuracy:</strong> You warrant that all information provided (name, email, billing details, etc.) is accurate and up-to-date
               </LegalListItem>
               <LegalListItem>
-                <strong>Ownership:</strong> You confirm that you are authorized to use the payment method and that you have 
-                sufficient funds or credit available
+                <strong>Payment Method:</strong> You confirm that you are authorized to use the payment method provided and have sufficient funds
               </LegalListItem>
               <LegalListItem>
-                <strong>Retry Authorization:</strong> By providing updated payment information, you authorize retry attempts 
-                for previously declined transactions
+                <strong>Renewal Authorization:</strong> Memberships automatically renew unless canceled before the renewal date
               </LegalListItem>
               <LegalListItem>
-                <strong>Third-Party Processors:</strong> Payments are processed through third-party payment processors 
-                (Stripe, PayPal, etc.) subject to their terms
+                <strong>Third-Party Processors:</strong> Payments are processed through third-party payment processors subject to their terms
               </LegalListItem>
             </LegalList>
           </LegalSection>

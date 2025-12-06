@@ -28,7 +28,7 @@ const TermsPage: React.FC = () => {
             <LegalParagraph>
               These Terms and Conditions ("Terms") constitute a legally binding agreement between you and {process.env.REACT_APP_COMPANY_NAME} 
               ("Company," "we," "us," or "our") concerning your access to and use of our services, including our website and 
-              payment recovery solutions.
+              loyalty rewards program.
             </LegalParagraph>
             <LegalParagraph>
               By accessing or using our services, you agree that you have read, understood, and agree to be bound by these Terms. 
@@ -39,15 +39,15 @@ const TermsPage: React.FC = () => {
           <LegalSection>
             <LegalSectionTitle>Services Description</LegalSectionTitle>
             <LegalParagraph>
-              {process.env.REACT_APP_COMPANY_NAME} provides payment recovery and revenue optimization services designed to help 
-              businesses recover failed transactions and reduce payment abandonment. Our services include:
+              {process.env.REACT_APP_COMPANY_NAME} provides a loyalty and rewards program designed to help 
+              members save money through exclusive discounts, cashback rewards, and VIP perks. Our services include:
             </LegalParagraph>
             <LegalList>
-              <LegalListItem>Automated payment retry logic and failed transaction recovery</LegalListItem>
-              <LegalListItem>Customer communication and payment reminder systems</LegalListItem>
-              <LegalListItem>Analytics and reporting on payment performance</LegalListItem>
-              <LegalListItem>Integration with e-commerce platforms and payment processors</LegalListItem>
-              <LegalListItem>Consultation and support services</LegalListItem>
+              <LegalListItem>Access to exclusive member discounts at thousands of partner retailers</LegalListItem>
+              <LegalListItem>Cashback rewards on purchases from participating brands</LegalListItem>
+              <LegalListItem>VIP benefits including early access to sales and special events</LegalListItem>
+              <LegalListItem>Member dashboard for tracking savings and rewards</LegalListItem>
+              <LegalListItem>Customer support and membership assistance services</LegalListItem>
             </LegalList>
           </LegalSection>
 

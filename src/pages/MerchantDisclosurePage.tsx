@@ -27,7 +27,7 @@ const MerchantDisclosurePage: React.FC = () => {
             <LegalSectionTitle>Merchant Information</LegalSectionTitle>
             <LegalParagraph>
               This disclosure provides important information about {process.env.REACT_APP_COMPANY_NAME}, the merchant 
-              providing payment recovery services. This information is provided in compliance with consumer protection 
+              providing loyalty rewards program services. This information is provided in compliance with consumer protection 
               laws and payment card industry regulations.
             </LegalParagraph>
             <LegalParagraph style={{ fontWeight: 600, marginTop: '1.5rem' }}>
@@ -65,29 +65,29 @@ const MerchantDisclosurePage: React.FC = () => {
           <LegalSection>
             <LegalSectionTitle>Nature of Business</LegalSectionTitle>
             <LegalParagraph>
-              {process.env.REACT_APP_COMPANY_NAME} is a payment recovery service provider that operates on behalf of 
-              e-commerce merchants and online businesses. Our services include:
+              {process.env.REACT_APP_COMPANY_NAME} is a loyalty rewards program provider that partners with retailers and brands 
+              to offer exclusive member benefits. Our services include:
             </LegalParagraph>
             <LegalList>
               <LegalListItem>
-                <strong>Failed Payment Recovery:</strong> Automated retry and recovery of declined or failed payment transactions
+                <strong>Exclusive Member Discounts:</strong> Special pricing and deals at thousands of partner retailers and online stores
               </LegalListItem>
               <LegalListItem>
-                <strong>Customer Communication:</strong> Email and SMS notifications to customers regarding payment issues
+                <strong>Cashback Rewards:</strong> Percentage-based cashback earnings on purchases from participating brands
               </LegalListItem>
               <LegalListItem>
-                <strong>Payment Processing:</strong> Secure processing of credit card, debit card, and other payment methods
+                <strong>Member Communications:</strong> Email and SMS notifications regarding new offers, deals, and exclusive benefits
               </LegalListItem>
               <LegalListItem>
-                <strong>Account Management:</strong> Tools for customers to update payment information and manage subscriptions
+                <strong>Account Management:</strong> Tools for members to track savings, manage rewards, and redeem cashback
               </LegalListItem>
               <LegalListItem>
-                <strong>Analytics and Reporting:</strong> Data insights for merchants regarding payment recovery performance
+                <strong>Savings Analytics:</strong> Dashboard insights showing member savings history and rewards earned
               </LegalListItem>
             </LegalList>
             <LegalParagraph style={{ marginTop: '1rem' }}>
-              We act as a payment service provider and merchant of record for transactions processed through our platform. 
-              Established in {process.env.REACT_APP_COMPANY_BIRTH}, we serve e-commerce businesses across various industries.
+              We operate as a membership-based loyalty program provider. Established in {process.env.REACT_APP_COMPANY_BIRTH}, 
+              we help members save money through exclusive partnerships with leading brands.
             </LegalParagraph>
           </LegalSection>
 

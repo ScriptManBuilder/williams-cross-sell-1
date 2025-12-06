@@ -25,40 +25,40 @@ const CTASection: React.FC = () => {
     {
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
         </svg>
       ),
-      title: 'Proven ROI',
-      description: 'Average 15-30% recovery rate on failed transactions with measurable impact on your bottom line'
+      title: 'Instant Activation',
+      description: 'Get immediate access to exclusive deals and start saving within minutes of joining'
     },
     {
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
         </svg>
       ),
-      title: 'Rapid Setup',
-      description: 'Live in under 24 hours with plug-and-play integration for all major payment platforms'
+      title: 'No Hidden Fees',
+      description: 'Transparent pricing with no surprise charges—just pure savings and rewards'
     },
     {
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+          <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
         </svg>
       ),
-      title: 'Bank-Grade Security',
-      description: 'PCI DSS Level 1 certified with SOC 2 compliance and end-to-end encryption'
+      title: '24/7 Member Support',
+      description: 'Our dedicated support team is always ready to help maximize your benefits'
     }
   ];
 
   return (
     <CTAContainer id="how-it-works">
       <CTAContent>
-        <CTATitle>Start Recovering Lost Revenue Today</CTATitle>
+        <CTATitle>Join Thousands of Members Saving Daily</CTATitle>
         <CTADescription>
-          Join leading brands that trust our platform to automatically recover failed payments and maximize revenue.
+          Unlock exclusive perks, cashback rewards, and premium discounts. Start your savings journey today.
         </CTADescription>
-        <CTASectionButton onClick={handleGetStarted}>Get Started Now →</CTASectionButton>
+        <CTASectionButton onClick={handleGetStarted}>Unlock My Perks →</CTASectionButton>
         
         <CTAFeaturesGrid>
           {features.map((feature, index) => (

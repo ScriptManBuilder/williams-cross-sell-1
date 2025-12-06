@@ -16,28 +16,28 @@ const FAQSection: React.FC = () => {
 
   const faqs = [
     {
-      question: 'How does payment recovery work?',
-      answer: 'Our system automatically detects failed payments and initiates intelligent retry attempts using optimized timing, payment methods, and messaging. The process is completely automated and requires no manual intervention.'
+      question: 'How do I join the loyalty program?',
+      answer: 'Simply fill out the contact form on this page or call our member services team. We\'ll guide you through the quick enrollment process and activate your account within minutes. You can start enjoying benefits immediately.'
     },
     {
-      question: 'How long does implementation take?',
-      answer: 'Most clients are live within 24 hours. Our plug-and-play integration works seamlessly with major payment processors including Stripe, PayPal, Authorize.net, and Square. Minimal developer resources required.'
+      question: 'What kind of discounts can I expect?',
+      answer: 'Members save 10-50% at thousands of partner retailers, restaurants, hotels, and online stores. You\'ll also earn 3-15% cashback on purchases, with exclusive VIP deals added weekly. The average member saves $1,200 annually.'
     },
     {
-      question: 'What is your typical recovery rate?',
-      answer: 'Our clients typically recover 15-30% of failed transactions. The exact rate depends on factors like your industry, average transaction value, and decline reasons. We provide detailed analytics to track your recovery performance.'
+      question: 'Is there a membership fee?',
+      answer: 'We offer flexible membership tiers to fit any budget. Contact us to learn about current promotions and find the plan that works best for you. Most members pay off their membership with their first few purchases.'
     },
     {
-      question: 'Is customer data secure?',
-      answer: 'Absolutely. We are PCI DSS Level 1 certified and SOC 2 compliant. All payment data is encrypted end-to-end, and we never store sensitive card information. Your customers\' security is our top priority.'
+      question: 'How do I earn and redeem cashback rewards?',
+      answer: 'Earn cashback automatically on every purchase at participating brands. Your rewards accumulate in your account dashboard and can be redeemed for statement credits, gift cards, or transferred to your bank account with no minimum thresholds.'
     },
     {
-      question: 'What types of payment failures can you recover?',
-      answer: 'We handle various decline reasons including insufficient funds, expired cards, incorrect card details, and temporary bank issues. Our intelligent system identifies which failures are recoverable and applies the optimal retry strategy.'
+      question: 'Can I share benefits with my family?',
+      answer: 'Yes! Add up to 5 family members to your account at no extra cost. Each member gets their own login and can earn rewards, while you pool benefits together for even bigger savings. Perfect for families who shop together.'
     },
     {
-      question: 'How does pricing work?',
-      answer: 'We operate on a performance-based model—you only pay when we successfully recover a failed payment. No setup fees, no monthly minimums. Our pricing scales with your success, aligning our interests with yours.'
+      question: 'Do my rewards expire?',
+      answer: 'Your cashback rewards and member status remain active as long as your account is in good standing. Unused rewards never expire, and you can accumulate savings over time. We believe in rewarding loyalty, not punishing it.'
     }
   ];
 
@@ -50,7 +50,7 @@ const FAQSection: React.FC = () => {
       <FAQContent>
         <FAQTitle>Frequently Asked Questions</FAQTitle>
         <FAQDescription>
-          Everything you need to know about our payment recovery platform
+          Everything you need to know about membership benefits and rewards
         </FAQDescription>
         <FAQList>
           {faqs.map((faq, index) => (

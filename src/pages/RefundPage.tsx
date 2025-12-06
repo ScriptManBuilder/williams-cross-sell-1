@@ -26,7 +26,7 @@ const RefundPage: React.FC = () => {
           <LegalSection>
             <LegalSectionTitle>Our Commitment to Customer Satisfaction</LegalSectionTitle>
             <LegalParagraph>
-              At {process.env.REACT_APP_COMPANY_NAME}, we are committed to providing high-quality payment recovery services. 
+              At {process.env.REACT_APP_COMPANY_NAME}, we are committed to providing exceptional member benefits and rewards. 
               This Refund Policy outlines the circumstances under which refunds may be issued and the process for requesting a refund.
             </LegalParagraph>
             <LegalParagraph>

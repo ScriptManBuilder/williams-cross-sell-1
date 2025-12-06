@@ -28,7 +28,7 @@ const PrivacyPage: React.FC = () => {
             <LegalParagraph>
               {process.env.REACT_APP_COMPANY_NAME} ("we," "us," or "our") is committed to protecting your privacy. 
               This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use 
-              our payment recovery services and visit our website.
+              our loyalty rewards program and visit our website.
             </LegalParagraph>
             <LegalParagraph>
               By using our services, you consent to the data practices described in this policy. If you do not agree 
@@ -77,7 +77,7 @@ const PrivacyPage: React.FC = () => {
               We use the collected information for various purposes:
             </LegalParagraph>
             <LegalList>
-              <LegalListItem><strong>Service Delivery:</strong> Process transactions, recover failed payments, send payment reminders</LegalListItem>
+              <LegalListItem><strong>Service Delivery:</strong> Process membership enrollments, provide access to exclusive discounts, track cashback rewards</LegalListItem>
               <LegalListItem><strong>Account Management:</strong> Create and maintain your account, authenticate users, provide support</LegalListItem>
               <LegalListItem><strong>Communication:</strong> Send service updates, transaction notifications, marketing communications</LegalListItem>
               <LegalListItem><strong>Analytics:</strong> Analyze usage patterns, improve service performance, develop new features</LegalListItem>

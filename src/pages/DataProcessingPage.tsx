@@ -27,7 +27,7 @@ const DataProcessingPage: React.FC = () => {
             <LegalSectionTitle>1. Definitions and Interpretation</LegalSectionTitle>
             <LegalParagraph>
               This Data Processing Agreement ("DPA") forms part of the service agreement between you ("Data Controller") 
-              and {process.env.REACT_APP_COMPANY_NAME} ("Data Processor") for the provision of payment recovery services.
+              and {process.env.REACT_APP_COMPANY_NAME} ("Data Processor") for the provision of loyalty rewards program services.
             </LegalParagraph>
             <LegalParagraph>
               For the purposes of this DPA:
@@ -59,11 +59,11 @@ const DataProcessingPage: React.FC = () => {
               The Data Processor shall process Personal Data only for the following purposes:
             </LegalParagraph>
             <LegalList>
-              <LegalListItem>Providing payment recovery services as described in the service agreement</LegalListItem>
-              <LegalListItem>Analyzing transaction data to identify recovery opportunities</LegalListItem>
-              <LegalListItem>Communicating with customers regarding payment recovery</LegalListItem>
-              <LegalListItem>Processing payments and managing financial transactions</LegalListItem>
-              <LegalListItem>Providing customer support and technical assistance</LegalListItem>
+              <LegalListItem>Providing loyalty rewards program services as described in the service agreement</LegalListItem>
+              <LegalListItem>Managing member accounts and tracking benefit eligibility</LegalListItem>
+              <LegalListItem>Communicating with members regarding exclusive offers and rewards</LegalListItem>
+              <LegalListItem>Processing cashback rewards and managing redemptions</LegalListItem>
+              <LegalListItem>Providing customer support and member assistance</LegalListItem>
               <LegalListItem>Generating reports and analytics for the Data Controller</LegalListItem>
               <LegalListItem>Complying with legal obligations and regulatory requirements</LegalListItem>
             </LegalList>

@@ -14,27 +14,27 @@ import {
 const StatsSection: React.FC = () => {
   const stats = [
     {
-      title: 'Online Transaction Decline Rate',
-      description: 'Failed payments cost merchants billions annually—most are recoverable with the right approach',
-      value: '15%',
+      title: 'Active Members Nationwide',
+      description: 'Join a thriving community of smart shoppers who save on everyday purchases',
+      value: '250K+',
       background: 'linear-gradient(135deg, #0066cc 0%, #3388dd 100%)'
     },
     {
-      title: 'Annual Revenue Lost Globally',
-      description: 'eCommerce merchants lose nearly half a trillion in recoverable revenue to payment failures',
-      value: '$443B',
+      title: 'Total Member Savings',
+      description: 'Our members have collectively saved millions through exclusive discounts and cashback',
+      value: '$89M',
       background: 'linear-gradient(135deg, #3388dd 0%, #0066cc 100%)'
     },
     {
-      title: 'Customer Abandonment Rate',
-      description: 'Two-thirds of customers never return after a single payment failure—acting fast is critical',
-      value: '68%',
+      title: 'Member Satisfaction Rate',
+      description: 'Our members love the value they get—see why so many shoppers trust us',
+      value: '97%',
       background: 'linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%)'
     },
     {
-      title: 'Recovery Success Rate',
-      description: 'Our intelligent retry system recovers nearly one-third of failed transactions automatically',
-      value: '30%',
+      title: 'Average Annual Savings',
+      description: 'The typical member saves over a thousand dollars per year through our benefits',
+      value: '$1,200',
       background: 'linear-gradient(135deg, #00d4aa 0%, #00bfa5 100%)'
     }
   ];
@@ -42,9 +42,9 @@ const StatsSection: React.FC = () => {
   return (
     <StatsContainer id="stats">
       <StatsContent>
-        <StatsSectionTitle>The Cost of Doing Nothing</StatsSectionTitle>
+        <StatsSectionTitle>Trusted by Thousands of Smart Shoppers</StatsSectionTitle>
         <StatsSectionDescription>
-          Every declined payment represents lost revenue. See how our recovery platform turns payment failures into business wins.
+          Real savings from real members. See how our loyalty program delivers exceptional value every single day.
         </StatsSectionDescription>
         <StatsGrid>
           {stats.map((stat, index) => (

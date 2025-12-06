@@ -38,27 +38,27 @@ const SupportPage: React.FC = () => {
   const faqs = [
     {
       question: 'How quickly will I receive a response?',
-      answer: 'Our support team typically responds within 2-4 hours during business hours (Monday-Friday, 9 AM - 6 PM EST). For urgent issues, please call our phone support line for immediate assistance.'
+      answer: 'Our member support team typically responds within 2-4 hours during business hours (Monday-Friday, 9 AM - 6 PM EST). For urgent membership questions, please call our phone support line for immediate assistance.'
     },
     {
-      question: 'What information should I include when contacting support?',
-      answer: 'Please include your account email, a detailed description of the issue, any error messages you received, and screenshots if applicable. This helps us resolve your issue faster.'
+      question: 'How do I access my member benefits?',
+      answer: 'Once enrolled, you\'ll receive login credentials to access your personalized dashboard. There you can browse exclusive deals, track your cashback rewards, and view your total savings. You can also download our mobile app for on-the-go access.'
     },
     {
-      question: 'Do you offer technical support for integrations?',
-      answer: 'Yes! Our technical support team can assist with API integrations, webhooks, and platform connections. We provide comprehensive documentation and dedicated support for technical implementation.'
+      question: 'Can I upgrade my membership tier?',
+      answer: 'Yes! You can upgrade to a higher membership tier at any time. Contact our support team to explore premium tiers with enhanced benefits like higher cashback rates, exclusive VIP perks, and priority customer service.'
     },
     {
-      question: 'Can I schedule a call with your support team?',
-      answer: 'Absolutely! You can schedule a call through our contact form or by emailing us directly. We offer screen-sharing sessions for complex technical issues and onboarding assistance.'
+      question: 'How do I redeem my cashback rewards?',
+      answer: 'Cashback rewards can be redeemed directly from your dashboard. Choose from statement credits, gift cards to popular retailers, or direct bank transfers. There are no minimum thresholds—redeem anytime you like.'
     },
     {
-      question: 'What if I need help outside business hours?',
-      answer: 'You can submit a ticket anytime through email or our contact form. We monitor support requests 24/7 and will respond as soon as possible. Critical issues are prioritized and handled immediately.'
+      question: 'What if I need help finding a specific discount?',
+      answer: 'Our member support team is happy to help you find the best deals for your needs. We can recommend partner brands, alert you to limited-time offers, and help you maximize your savings on upcoming purchases.'
     },
     {
-      question: 'Do you provide training for new users?',
-      answer: 'Yes! We offer comprehensive onboarding sessions, video tutorials, and detailed documentation. Our support team can schedule personalized training sessions to help you get the most out of our platform.'
+      question: 'Can I pause or cancel my membership?',
+      answer: 'Yes, you have full control over your membership. You can pause your account if you need a break, or cancel anytime with no penalties. Your accumulated rewards will remain safe and accessible when you return.'
     }
   ];
 
@@ -74,7 +74,7 @@ const SupportPage: React.FC = () => {
         </svg>
       ),
       title: 'Account Setup',
-      description: 'Help with creating and configuring your payment recovery account'
+      description: 'Help with creating and activating your loyalty membership account'
     },
     {
       icon: (
@@ -82,8 +82,8 @@ const SupportPage: React.FC = () => {
           <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
         </svg>
       ),
-      title: 'Customer Management',
-      description: 'Questions about managing customer data and payment recovery processes'
+      title: 'Member Benefits',
+      description: 'Questions about accessing and maximizing your exclusive perks and discounts'
     },
     {
       icon: (
@@ -91,8 +91,8 @@ const SupportPage: React.FC = () => {
           <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
         </svg>
       ),
-      title: 'Analytics & Reports',
-      description: 'Assistance with viewing and understanding recovery analytics'
+      title: 'Rewards & Cashback',
+      description: 'Assistance with tracking, earning, and redeeming your cashback rewards'
     },
     {
       icon: (
@@ -100,8 +100,8 @@ const SupportPage: React.FC = () => {
           <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
         </svg>
       ),
-      title: 'Integration Support',
-      description: 'Help with platform integration and technical implementation'
+      title: 'Partner Brands',
+      description: 'Help finding participating retailers and exclusive partner offers'
     },
     {
       icon: (
@@ -110,7 +110,7 @@ const SupportPage: React.FC = () => {
         </svg>
       ),
       title: 'Billing & Subscription',
-      description: 'Questions about billing, payments, and plan changes'
+      description: 'Questions about membership plans, billing, and subscription management'
     },
     {
       icon: (
@@ -118,8 +118,8 @@ const SupportPage: React.FC = () => {
           <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
         </svg>
       ),
-      title: 'Security & Compliance',
-      description: 'Information about data security, PCI compliance, and encryption'
+      title: 'Account Security',
+      description: 'Information about protecting your account and personal information'
     }
   ];
 
@@ -141,8 +141,8 @@ const SupportPage: React.FC = () => {
               <HeroImage src="/heroSupport3.png" alt="Customer Support" />
             </HeroImageWrapper>
             <HeroContent>
-              <HeroTitle>Customer Care for Payment Recovery</HeroTitle>
-              <HeroDescription>Need help? We're here to support you.</HeroDescription>
+              <HeroTitle>Member Support & Assistance</HeroTitle>
+              <HeroDescription>Have questions about your benefits? We're here to help you save more.</HeroDescription>
             
             <ContactInfo>
               <PhoneIcon>
