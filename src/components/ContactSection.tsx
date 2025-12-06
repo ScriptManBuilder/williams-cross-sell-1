@@ -54,25 +54,25 @@ const ContactSection: React.FC = () => {
 
   const features = [
     {
-      title: 'Automated Recovery',
-      description: 'Our AI-powered system automatically recovers failed payments and abandoned carts, saving you time and increasing revenue.'
+      title: 'Exclusive Access',
+      description: 'Gain VIP entry to the finest restaurants, luxury hotels, and exclusive events reserved for elite members only.'
     },
     {
-      title: 'Data-Driven Insights',
-      description: 'Get detailed analytics and insights into your payment failures and customer behavior to optimize your checkout process.'
+      title: 'Personal Concierge',
+      description: 'Dedicated 24/7 lifestyle management team ready to handle reservations, arrangements, and special requests.'
     },
     {
-      title: 'Seamless Integration',
-      description: 'Easy integration with your existing eCommerce platform. No coding required, just plug and play.'
+      title: 'Curated Experiences',
+      description: 'Handpicked luxury experiences including private dining, first-class travel, and premium wellness services.'
     }
   ];
 
   return (
     <ContactContainer id="contact">
       <ContactContent>
-        <ContactTitle>Let's recover your lost revenue</ContactTitle>
+        <ContactTitle>Begin Your VIP Journey</ContactTitle>
         <ContactDescription>
-          Get in touch to learn how we can help you recover failed payments and increase your revenue.
+          Connect with us to discover exclusive membership benefits and luxury lifestyle experiences tailored for you.
         </ContactDescription>
         
         <ContactGrid>
@@ -121,7 +121,7 @@ const ContactSection: React.FC = () => {
               <FormLabel>Message</FormLabel>
               <FormTextarea 
                 name="message"
-                placeholder="Tell us about your business and payment recovery needs..." 
+                placeholder="Tell us about your lifestyle preferences and VIP experience interests..." 
                 rows={5}
                 required 
                 disabled={isSubmitting}

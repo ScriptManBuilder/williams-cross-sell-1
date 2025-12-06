@@ -16,28 +16,28 @@ const FAQSection: React.FC = () => {
 
   const faqs = [
     {
-      question: 'How do I join the loyalty program?',
-      answer: 'Simply fill out the contact form on this page or call our member services team. We\'ll guide you through the quick enrollment process and activate your account within minutes. You can start enjoying benefits immediately.'
+      question: 'How do I become a VIP member?',
+      answer: 'Membership is by application only. Submit your interest through our contact form, and our membership team will reach out within 24 hours to discuss eligibility and membership tiers tailored to your lifestyle preferences.'
     },
     {
-      question: 'What kind of discounts can I expect?',
-      answer: 'Members save 10-50% at thousands of partner retailers, restaurants, hotels, and online stores. You\'ll also earn 3-15% cashback on purchases, with exclusive VIP deals added weekly. The average member saves $1,200 annually.'
+      question: 'What exclusive experiences are included?',
+      answer: 'Members enjoy VIP access to Michelin-starred dining, luxury hotel suites, first-class travel upgrades, private shopping appointments, exclusive events, premium spa treatments, and personalized concierge services across the globe.'
     },
     {
-      question: 'Is there a membership fee?',
-      answer: 'We offer flexible membership tiers to fit any budget. Contact us to learn about current promotions and find the plan that works best for you. Most members pay off their membership with their first few purchases.'
+      question: 'What are the membership tiers?',
+      answer: 'We offer Elite, Platinum, and Diamond tiers, each with progressively enhanced benefits. Contact our membership team to explore which tier best suits your lifestyle and discover the exclusive privileges at each level.'
     },
     {
-      question: 'How do I earn and redeem cashback rewards?',
-      answer: 'Earn cashback automatically on every purchase at participating brands. Your rewards accumulate in your account dashboard and can be redeemed for statement credits, gift cards, or transferred to your bank account with no minimum thresholds.'
+      question: 'Is there a personal concierge included?',
+      answer: 'Yes! All members receive 24/7 access to a dedicated lifestyle concierge who handles reservations, travel arrangements, event planning, and any special requests. Diamond members receive a personal account manager.'
     },
     {
-      question: 'Can I share benefits with my family?',
-      answer: 'Yes! Add up to 5 family members to your account at no extra cost. Each member gets their own login and can earn rewards, while you pool benefits together for even bigger savings. Perfect for families who shop together.'
+      question: 'Can I bring guests to exclusive events?',
+      answer: 'Absolutely. Members can bring guests to most events, with allowances varying by membership tier. Diamond members enjoy unlimited guest privileges at select venues and experiences.'
     },
     {
-      question: 'Do my rewards expire?',
-      answer: 'Your cashback rewards and member status remain active as long as your account is in good standing. Unused rewards never expire, and you can accumulate savings over time. We believe in rewarding loyalty, not punishing it.'
+      question: 'Are there international benefits?',
+      answer: 'Yes. Our network spans over 100 countries, providing seamless access to luxury experiences worldwide. From Paris to Tokyo, members enjoy VIP treatment wherever they travel.'
     }
   ];
 
@@ -50,7 +50,7 @@ const FAQSection: React.FC = () => {
       <FAQContent>
         <FAQTitle>Frequently Asked Questions</FAQTitle>
         <FAQDescription>
-          Everything you need to know about membership benefits and rewards
+          Learn more about exclusive VIP membership benefits and premium lifestyle services
         </FAQDescription>
         <FAQList>
           {faqs.map((faq, index) => (

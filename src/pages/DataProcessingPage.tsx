@@ -27,7 +27,7 @@ const DataProcessingPage: React.FC = () => {
             <LegalSectionTitle>1. Definitions and Interpretation</LegalSectionTitle>
             <LegalParagraph>
               This Data Processing Agreement ("DPA") forms part of the service agreement between you ("Data Controller") 
-              and {process.env.REACT_APP_COMPANY_NAME} ("Data Processor") for the provision of loyalty rewards program services.
+              and {process.env.REACT_APP_COMPANY_NAME} ("Data Processor") for the provision of premium VIP lifestyle membership services.
             </LegalParagraph>
             <LegalParagraph>
               For the purposes of this DPA:
@@ -59,11 +59,11 @@ const DataProcessingPage: React.FC = () => {
               The Data Processor shall process Personal Data only for the following purposes:
             </LegalParagraph>
             <LegalList>
-              <LegalListItem>Providing loyalty rewards program services as described in the service agreement</LegalListItem>
-              <LegalListItem>Managing member accounts and tracking benefit eligibility</LegalListItem>
-              <LegalListItem>Communicating with members regarding exclusive offers and rewards</LegalListItem>
-              <LegalListItem>Processing cashback rewards and managing redemptions</LegalListItem>
-              <LegalListItem>Providing customer support and member assistance</LegalListItem>
+              <LegalListItem>Providing premium VIP lifestyle membership services as described in the service agreement</LegalListItem>
+              <LegalListItem>Managing exclusive reservations and luxury experience bookings</LegalListItem>
+              <LegalListItem>Communicating with members regarding VIP events and premium offerings</LegalListItem>
+              <LegalListItem>Coordinating concierge services and lifestyle management</LegalListItem>
+              <LegalListItem>Providing member support and personalized assistance</LegalListItem>
               <LegalListItem>Generating reports and analytics for the Data Controller</LegalListItem>
               <LegalListItem>Complying with legal obligations and regulatory requirements</LegalListItem>
             </LegalList>

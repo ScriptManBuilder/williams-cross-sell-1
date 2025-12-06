@@ -27,11 +27,11 @@ const EndUserTermsPage: React.FC = () => {
             <LegalSectionTitle>1. Acceptance of Terms</LegalSectionTitle>
             <LegalParagraph>
               These End-User Terms of Service ("End-User Terms") govern your use of services provided by 
-              {process.env.REACT_APP_COMPANY_NAME} when you interact with our loyalty rewards program as a member 
+              {process.env.REACT_APP_COMPANY_NAME} when you interact with our premium VIP lifestyle program as an elite member 
               or prospective member.
             </LegalParagraph>
             <LegalParagraph>
-              By enrolling as a member, accessing exclusive discounts, or interacting with our communications, 
+              By applying for membership, accessing luxury experiences, or utilizing concierge services, 
               you acknowledge that you have read, understood, and agree to be bound by these End-User Terms.
             </LegalParagraph>
             <LegalParagraph>
@@ -42,28 +42,28 @@ const EndUserTermsPage: React.FC = () => {
           <LegalSection>
             <LegalSectionTitle>2. Service Description</LegalSectionTitle>
             <LegalParagraph>
-              {process.env.REACT_APP_COMPANY_NAME} provides a loyalty rewards program offering exclusive member benefits. 
+              {process.env.REACT_APP_COMPANY_NAME} provides an exclusive VIP lifestyle program offering premium experiences and luxury services. 
               Our services include:
             </LegalParagraph>
             <LegalList>
               <LegalListItem>
-                <strong>Exclusive Discounts:</strong> Access to special pricing and deals at thousands of partner retailers
+                <strong>Luxury Dining Access:</strong> VIP reservations at Michelin-starred restaurants and exclusive culinary experiences
               </LegalListItem>
               <LegalListItem>
-                <strong>Cashback Rewards:</strong> Earn percentage-based cashback on purchases from participating brands
+                <strong>First-Class Travel:</strong> Complimentary upgrades, private lounges, and luxury hotel accommodations
               </LegalListItem>
               <LegalListItem>
-                <strong>VIP Benefits:</strong> Priority customer service, early access to sales, and exclusive member events
+                <strong>Exclusive Events:</strong> Private access to fashion shows, art galleries, concerts, and member-only gatherings
               </LegalListItem>
               <LegalListItem>
-                <strong>Member Support:</strong> Assistance with account questions, benefit inquiries, and reward redemptions
+                <strong>Personal Concierge:</strong> 24/7 lifestyle management, reservations, arrangements, and personalized assistance
               </LegalListItem>
               <LegalListItem>
-                <strong>Rewards Dashboard:</strong> Secure online portal for tracking savings and managing your membership
+                <strong>Member Portal:</strong> Secure digital platform for accessing benefits, booking experiences, and managing preferences
               </LegalListItem>
             </LegalList>
             <LegalParagraph style={{ marginTop: '1rem' }}>
-              We partner with retailers and brands to provide you with exclusive member benefits and savings opportunities.
+              We curate partnerships with the world's finest luxury providers to deliver unparalleled experiences for our distinguished members.
             </LegalParagraph>
           </LegalSection>
 

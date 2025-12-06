@@ -39,15 +39,15 @@ const TermsPage: React.FC = () => {
           <LegalSection>
             <LegalSectionTitle>Services Description</LegalSectionTitle>
             <LegalParagraph>
-              {process.env.REACT_APP_COMPANY_NAME} provides a loyalty and rewards program designed to help 
-              members save money through exclusive discounts, cashback rewards, and VIP perks. Our services include:
+              {process.env.REACT_APP_COMPANY_NAME} provides an exclusive VIP lifestyle program designed to elevate 
+              your daily experiences through luxury services, premium benefits, and white-glove concierge support. Our services include:
             </LegalParagraph>
             <LegalList>
-              <LegalListItem>Access to exclusive member discounts at thousands of partner retailers</LegalListItem>
-              <LegalListItem>Cashback rewards on purchases from participating brands</LegalListItem>
-              <LegalListItem>VIP benefits including early access to sales and special events</LegalListItem>
-              <LegalListItem>Member dashboard for tracking savings and rewards</LegalListItem>
-              <LegalListItem>Customer support and membership assistance services</LegalListItem>
+              <LegalListItem>VIP access to Michelin-starred restaurants and exclusive dining experiences</LegalListItem>
+              <LegalListItem>First-class travel upgrades, luxury hotel accommodations, and premium concierge services</LegalListItem>
+              <LegalListItem>Private access to exclusive events, fashion shows, art galleries, and cultural experiences</LegalListItem>
+              <LegalListItem>Personal lifestyle concierge available 24/7 for reservations and arrangements</LegalListItem>
+              <LegalListItem>Premium wellness services including spa treatments and elite fitness center access</LegalListItem>
             </LegalList>
           </LegalSection>
 

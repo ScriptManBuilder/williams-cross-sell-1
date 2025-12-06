@@ -14,37 +14,37 @@ import {
 const StatsSection: React.FC = () => {
   const stats = [
     {
-      title: 'Active Members Nationwide',
-      description: 'Join a thriving community of smart shoppers who save on everyday purchases',
-      value: '250K+',
-      background: 'linear-gradient(135deg, #0066cc 0%, #3388dd 100%)'
+      title: 'Elite Members Worldwide',
+      description: 'Join an exclusive network of distinguished individuals enjoying premium lifestyle benefits',
+      value: '50K+',
+      background: 'linear-gradient(135deg, #d4af37 0%, #f4d03f 100%)'
     },
     {
-      title: 'Total Member Savings',
-      description: 'Our members have collectively saved millions through exclusive discounts and cashback',
-      value: '$89M',
-      background: 'linear-gradient(135deg, #3388dd 0%, #0066cc 100%)'
+      title: 'Luxury Partners',
+      description: 'Access to the world\'s finest hotels, restaurants, retailers, and exclusive venues',
+      value: '2,500+',
+      background: 'linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%)'
     },
     {
-      title: 'Member Satisfaction Rate',
-      description: 'Our members love the value they get—see why so many shoppers trust us',
-      value: '97%',
-      background: 'linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%)'
+      title: 'Member Satisfaction',
+      description: 'Our members consistently rate their experience as exceptional and life-changing',
+      value: '98%',
+      background: 'linear-gradient(135deg, #ec4899 0%, #f43f5e 100%)'
     },
     {
-      title: 'Average Annual Savings',
-      description: 'The typical member saves over a thousand dollars per year through our benefits',
-      value: '$1,200',
-      background: 'linear-gradient(135deg, #00d4aa 0%, #00bfa5 100%)'
+      title: 'Exclusive Experiences',
+      description: 'VIP events, private gatherings, and once-in-a-lifetime opportunities each year',
+      value: '500+',
+      background: 'linear-gradient(135deg, #0066cc 0%, #3b82f6 100%)'
     }
   ];
 
   return (
     <StatsContainer id="stats">
       <StatsContent>
-        <StatsSectionTitle>Trusted by Thousands of Smart Shoppers</StatsSectionTitle>
+        <StatsSectionTitle>Where Excellence Meets Exclusivity</StatsSectionTitle>
         <StatsSectionDescription>
-          Real savings from real members. See how our loyalty program delivers exceptional value every single day.
+          Experience unparalleled luxury and premium lifestyle benefits reserved for our distinguished members.
         </StatsSectionDescription>
         <StatsGrid>
           {stats.map((stat, index) => (

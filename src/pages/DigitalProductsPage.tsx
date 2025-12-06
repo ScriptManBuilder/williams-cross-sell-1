@@ -31,8 +31,8 @@ const DigitalProductsPage: React.FC = () => {
               terms outlined in this policy.
             </LegalParagraph>
             <LegalParagraph>
-              Our digital products include loyalty program memberships, exclusive discount access, mobile apps for tracking rewards, 
-              and any other digital services or content we provide.
+              Our digital services include VIP lifestyle memberships, exclusive event access, mobile concierge apps, 
+              and premium digital content designed for distinguished members.
             </LegalParagraph>
           </LegalSection>
 
@@ -43,22 +43,22 @@ const DigitalProductsPage: React.FC = () => {
             </LegalParagraph>
             <LegalList>
               <LegalListItem>
-                <strong>Membership Access:</strong> Digital loyalty program membership with access to exclusive discounts and rewards
+                <strong>VIP Membership Access:</strong> Elite membership with exclusive access to luxury experiences and premium services
               </LegalListItem>
               <LegalListItem>
-                <strong>Member Dashboard:</strong> Web-based portal for tracking savings, cashback rewards, and available perks
+                <strong>Concierge Portal:</strong> Web-based platform for booking reservations, requesting services, and managing experiences
               </LegalListItem>
               <LegalListItem>
-                <strong>Rewards Tracking:</strong> Tools for monitoring your cashback earnings, savings history, and redemption options
+                <strong>Experience Management:</strong> Tools for scheduling luxury dining, travel, events, and wellness appointments
               </LegalListItem>
               <LegalListItem>
-                <strong>Mobile Applications:</strong> iOS and Android apps for accessing member benefits and finding nearby deals
+                <strong>Mobile Applications:</strong> iOS and Android apps for on-demand concierge services and VIP access
               </LegalListItem>
               <LegalListItem>
-                <strong>Partner Integrations:</strong> Access to exclusive offers from thousands of partner retailers and brands
+                <strong>Luxury Partner Network:</strong> Digital access to exclusive venues, hotels, restaurants, and premium services
               </LegalListItem>
               <LegalListItem>
-                <strong>Documentation & Resources:</strong> Member guides, benefit overviews, FAQs, and support materials
+                <strong>Member Resources:</strong> Lifestyle guides, exclusive content, event calendars, and premium recommendations
               </LegalListItem>
             </LegalList>
           </LegalSection>

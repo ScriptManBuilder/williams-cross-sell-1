@@ -24,9 +24,9 @@ const RefundPage: React.FC = () => {
 
         <LegalContent>
           <LegalSection>
-            <LegalSectionTitle>Our Commitment to Customer Satisfaction</LegalSectionTitle>
+            <LegalSectionTitle>Our Commitment to Excellence</LegalSectionTitle>
             <LegalParagraph>
-              At {process.env.REACT_APP_COMPANY_NAME}, we are committed to providing exceptional member benefits and rewards. 
+              At {process.env.REACT_APP_COMPANY_NAME}, we are committed to delivering exceptional luxury experiences and premium lifestyle services. 
               This Refund Policy outlines the circumstances under which refunds may be issued and the process for requesting a refund.
             </LegalParagraph>
             <LegalParagraph>
@@ -62,7 +62,7 @@ const RefundPage: React.FC = () => {
           <LegalSection>
             <LegalSectionTitle>Commission-Based Services</LegalSectionTitle>
             <LegalParagraph>
-              For commission-based payment recovery services:
+              For premium VIP membership fees:
             </LegalParagraph>
             <LegalList>
               <LegalListItem>
@@ -115,7 +115,7 @@ const RefundPage: React.FC = () => {
               The following are not eligible for refunds under any circumstances:
             </LegalParagraph>
             <LegalList>
-              <LegalListItem>Completed payment recovery services and successfully recovered transactions</LegalListItem>
+              <LegalListItem>VIP services already rendered, including confirmed reservations, event access, or concierge arrangements</LegalListItem>
               <LegalListItem>Custom integration or development work that has been completed</LegalListItem>
               <LegalListItem>Consultation services that have been delivered</LegalListItem>
               <LegalListItem>Access to historical data, reports, or analytics</LegalListItem>

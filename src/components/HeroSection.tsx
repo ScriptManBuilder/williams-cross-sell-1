@@ -12,7 +12,7 @@ import {
 } from '../styles/HeroSection.styles';
 
 const HeroSection: React.FC = () => {
-  const appSubdomain = process.env.REACT_APP_APP_SUBDOMAIN || 'app.williamsrevenuerecovery.com';
+  const appSubdomain = process.env.REACT_APP_APP_SUBDOMAIN || 'app.williamsvipperks.com';
 
   const handleLaunchApp = () => {
     // Temporarily disabled - demo site under construction
@@ -29,22 +29,22 @@ const HeroSection: React.FC = () => {
   return (
     <HeroContainer>
       <HeroContent>
-        <Tagline>Exclusive Member Benefits</Tagline>
+        <Tagline>Elevate Your Lifestyle</Tagline>
         <HeroTitle>
-          Unlock Premium Perks.
-          <Highlight>Save More Every Day.</Highlight>
+          Experience Premium Living.
+          <Highlight>Unlock VIP Access.</Highlight>
         </HeroTitle>
         <HeroDescription>
-          Join thousands of savvy shoppers enjoying exclusive discounts, cashback rewards, and VIP perks. 
-          Our members save an average of $1,200 annually on everyday purchases while accessing premium 
-          benefits across thousands of partner brands and retailers.
+          Join an exclusive community of discerning members enjoying luxury experiences, premium lifestyle services, 
+          and VIP access to the finest dining, travel, entertainment, and wellness. Elevate every aspect of your life 
+          with curated benefits designed for those who demand excellence.
         </HeroDescription>
         <CTAButtonGroup>
           <CTAButtonPrimary onClick={handleLaunchApp}>
-            View My Perks →
+            Explore VIP Benefits →
           </CTAButtonPrimary>
           <CTAButtonSecondary onClick={handleScheduleCall}>
-            Learn More
+            Request Access
           </CTAButtonSecondary>
         </CTAButtonGroup>
       </HeroContent>

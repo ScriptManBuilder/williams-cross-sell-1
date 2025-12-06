@@ -26,8 +26,8 @@ const MerchantDisclosurePage: React.FC = () => {
           <LegalSection>
             <LegalSectionTitle>Merchant Information</LegalSectionTitle>
             <LegalParagraph>
-              This disclosure provides important information about {process.env.REACT_APP_COMPANY_NAME}, the merchant 
-              providing loyalty rewards program services. This information is provided in compliance with consumer protection 
+              This disclosure provides important information about {process.env.REACT_APP_COMPANY_NAME}, the provider of 
+              premium VIP lifestyle membership services. This information is provided in compliance with consumer protection 
               laws and payment card industry regulations.
             </LegalParagraph>
             <LegalParagraph style={{ fontWeight: 600, marginTop: '1.5rem' }}>
