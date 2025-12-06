@@ -14,7 +14,7 @@ import {
 const StatsSection: React.FC = () => {
   const stats = [
     {
-      title: 'Elite Members Worldwide',
+      title: 'Elite Members',
       description: 'Join an exclusive network of distinguished individuals enjoying premium lifestyle benefits',
       value: '50K+',
       background: 'linear-gradient(135deg, #d4af37 0%, #f4d03f 100%)'

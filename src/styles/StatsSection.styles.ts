@@ -216,6 +216,8 @@ export const StatValue = styled.div`
   letter-spacing: -0.02em;
   position: relative;
   display: inline-block;
+  min-width: 150px;
+  text-align: left;
   
   &::after {
     content: '';
@@ -235,21 +237,26 @@ export const StatValue = styled.div`
 
   @media (max-width: 1024px) {
     font-size: 2.75rem;
+    min-width: 130px;
   }
 
   @media (max-width: 768px) {
     font-size: 2.5rem;
+    min-width: 120px;
   }
 
   @media (max-width: 425px) {
     font-size: 2.25rem;
+    min-width: 110px;
   }
 
   @media (max-width: 375px) {
     font-size: 2rem;
+    min-width: 100px;
   }
 
   @media (max-width: 320px) {
     font-size: 1.85rem;
+    min-width: 95px;
   }
 `;
